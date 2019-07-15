@@ -4,6 +4,8 @@ https://serenity-js.org
 
 Why SerenityJS? Because it provides flexible toolkit for NodeJS(TypeScript to be exact) automation on the go with multiple patterns. I chose PageObject pattern because of original easy level of testing application (BBC Pages). In case of more "heavy" one apps better to use ScreenPlay pattern which gives much more profits in calculation of time-profit. And what is also good - PageObjects in SerenityJS can be easily converted into ScreenPlay with Actors, Tasks, Interactions (these all are core abstract things in SerenityJS which allows to manipulate objects like browsers, users, actions to peform and etc).
 
+Also please note, that Scenario 2 from "features/signinpage.feature" is NOT actually a test (from QA perspective), its just a showcase, that this framework has tools to verify missing objects just from the box :) Rest ones (1,3,4,5) yes, they are positive and negative test cases.
+
 # Installation
 
 1. Install NodeJS(I used 10.16.10 LTS), Java(I installed latest version) and Chrome browser on your system
