@@ -1,4 +1,4 @@
-import {browser, by, element, ExpectedConditions}  from 'protractor';
+import {browser, by, element, ExpectedConditions, promise}  from 'protractor';
 
 export class RegisterPage {
 
@@ -14,88 +14,88 @@ export class RegisterPage {
     readonly NoThanksButton = element(by.xpath("//*[@id='optOut']/.."));
     readonly HeaderAccountIcon = element(by.id("idcta-link"));
 
-    public Open() {
-        return browser.get(this.CorrectURL) as Promise<any>;
+    public Open(): promise.Promise<void> {
+        return browser.get(this.CorrectURL);
     }
 
-    public SubmitAge() {
+    public SubmitAge(): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.wait(EC.presenceOf(this.Over13Button), 10000).then(() => {
             this.Over13Button.click();
-        }) as Promise<any>;
+        });
     }
 
-    public FillInBirthData(day: string, month: string, year: string) {
+    public FillInBirthData(day: string, month: string, year: string): promise.Promise<void> {
         return this.FillInBirthDay(day).then(() => {
             this.FillInBirthMonth(month).then(() => {
                 this.FillInBirthYear(year)
             })
-        }) as Promise<any>;
+        });
     } 
 
-    public FillInBirthDay(day: string) {
+    public FillInBirthDay(day: string): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.wait(EC.presenceOf(this.DayInputField), 5000).then(() => {
             this.DayInputField.sendKeys(day);
-        }) as Promise<any>;
+        });
     } 
 
-    public FillInBirthMonth(month: string) {
+    public FillInBirthMonth(month: string): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.wait(EC.presenceOf(this.MonthInputField), 5000).then(() => {
             this.MonthInputField.sendKeys(month);
-        }) as Promise<any>;
+        });
     }
 
-    public FillInBirthYear(year: string) {
+    public FillInBirthYear(year: string): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.wait(EC.presenceOf(this.YearInputField), 5000).then(() => {
             this.YearInputField.sendKeys(year);
-        }) as Promise<any>;
+        });
     }
 
-    public FillInUserData(email: string, password: string) {
+    public FillInUserData(email: string, password: string): promise.Promise<void> {
         return this.FillInEmail(email).then(() => {
             this.FillInPassword(password).then(() => {
                 browser.sleep(1000);
             })
-        }) as Promise<any>;
+        });
     }
 
-    public FillInEmail(email: string) {
+    public FillInEmail(email: string): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.wait(EC.presenceOf(this.EmailField), 5000).then(() => {
             this.EmailField.sendKeys(email);
-        }) as Promise<any>;
+        });
     }
 
-    public FillInPassword(password: string) {
+    public FillInPassword(password: string): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.wait(EC.presenceOf(this.PasswordField), 5000).then(() => {
             this.PasswordField.sendKeys(password);
-        }) as Promise<any>;
+        });
     }
 
-    public Submit() {
+    public Submit(): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.sleep(500).then(() => {
             browser.wait(EC.presenceOf(this.SubmitButton), 10000).then(() => {
                 this.SubmitButton.click();
             })
-        }) as Promise<any>;
+        });
     }
 
-    public NoThanks() {
+    public NoThanks(): promise.Promise<void> {
         var EC = ExpectedConditions;
         return browser.sleep(1000).then(() => {
             browser.wait(EC.presenceOf(this.NoThanksButton), 10000).then(() => {
                 this.NoThanksButton.click()
                 })
-        }) as Promise<any>;
+        });
     }
 
-    public RegisteredSuccessfully() {
+    public RegisteredSuccessfully(): promise.Promise<void> {
         var EC = ExpectedConditions;
-        return browser.wait(EC.presenceOf(this.HeaderAccountIcon), 10000) as Promise<any>;
+        return browser.wait(EC.presenceOf(this.HeaderAccountIcon), 10000);
     }
 }

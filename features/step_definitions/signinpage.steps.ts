@@ -1,6 +1,6 @@
 import {SignInPage} from "../pages/signinpage.po";
 
-import { browser, by, element, ExpectedConditions } from 'protractor';
+import { browser, ExpectedConditions } from 'protractor';
 
 
 export = function signinpageSteps() {

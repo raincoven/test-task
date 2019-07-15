@@ -1,5 +1,5 @@
 
-import {browser, by, element, ExpectedConditions}  from 'protractor';
+import {browser, by, element, ExpectedConditions, promise}  from 'protractor';
 
 export class SignInPage {
 
@@ -16,34 +16,34 @@ export class SignInPage {
     readonly PasswordErrorMessage = element(by.css(".form-message--password>.form-message__text")); 
 
     //Actions can be done on Homepage
-    public Open() {
-        return browser.get(this.CorrectURL) as Promise<any>;
+    public Open(): promise.Promise<void> {
+        return browser.get(this.CorrectURL);
     }
 
-    public OpenWrong() {
-        return browser.get(this.WrongURL) as Promise<any>;
+    public OpenWrong(): promise.Promise<void> {
+        return browser.get(this.WrongURL);
     }
 
-    public Loaded() {  
+    public Loaded(): promise.Promise<void> {  
         return browser.
         wait(ExpectedConditions.
         presenceOf(this.BBCLogo), 5000, 
-        'Oops! Looks like you have opened wrong page - BBC Logo is missing!') as Promise<boolean>;
+        'Oops! Looks like you have opened wrong page - BBC Logo is missing!');
     }
 
-    public SignIn() {
-        return this.SignInButton.click() as Promise<any>;
+    public SignIn(): promise.Promise<void> {
+        return this.SignInButton.click();
     }
 
-    public EnterUsername(username: string) {
-        return this.UsernameField.sendKeys(username) as Promise<any>;
+    public EnterUsername(username: string): promise.Promise<void> {
+        return this.UsernameField.sendKeys(username);
     }
 
-    public EnterPassword(password: string) {
-        return this.PasswordField.sendKeys(password) as Promise<any>;
+    public EnterPassword(password: string): promise.Promise<void> {
+        return this.PasswordField.sendKeys(password);
     }
 
-    public RegisterNow() {
-        return this.RegisterNowHyperlink.click() as Promise<any>;
+    public RegisterNow(): promise.Promise<void> {
+        return this.RegisterNowHyperlink.click();
     }
 }

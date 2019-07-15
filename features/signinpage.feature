@@ -19,8 +19,8 @@ Feature: Set of tests for homepage of BBC
 
   Scenario: #4 - Check error message appear when you enter incorrect password
     Given I Open BBC SignInPage
-    Then I Enter heavymetal@email.com into Username Field
-    Then I Enter SlipknotRulz into Password Field
+    Then I Enter supertestuser1992@gmail.com into Username Field
+    Then I Enter Passw0rd19231 into Password Field
     Then I Click SignIn Button
     Then I See Password Error Message
 
@@ -30,7 +30,7 @@ Feature: Set of tests for homepage of BBC
     Then I Click Over 13 Button
     Then I Enter 6 as Day 6 as Month 1999 as Year
     Then I Submit Form
-    Then I Enter testmetalemail1666@gmail.com as Username
-    Then I Enter SlipknotRulz1999 as Password
+    Then I Enter qasupertestemail1992@gmail.com as Username
+    Then I Enter SuperQA3000 as Password
     Then I Submit Form
     Then I See No Thanks 
