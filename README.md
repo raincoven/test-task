@@ -6,7 +6,7 @@ Why SerenityJS? Because it provides flexible toolkit for NodeJS(TypeScript to be
 
 # Installation
 
-1. Install NodeJS, Java and Chrome browser on your system
+1. Install NodeJS(I used 10.16.10 LTS), Java(I installed latest version) and Chrome browser on your system
 2. Clone repo
 3. (OPTIONAL) I suggest to use Visual Studio Code and run all commands in its powershell/bash terminal in the root of project folder (will work on Windows/Linux/macOS)
 4. run "npm i"
