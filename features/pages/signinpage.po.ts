@@ -16,11 +16,11 @@ export class SignInPage {
     readonly PasswordErrorMessage = element(by.css(".form-message--password>.form-message__text")); 
 
     //Actions can be done on Homepage
-    public Open(): promise.Promise<void> {
+    public Open(): promise.Promise<any> {
         return browser.get(this.CorrectURL);
     }
 
-    public OpenWrong(): promise.Promise<void> {
+    public OpenWrong(): promise.Promise<any> {
         return browser.get(this.WrongURL);
     }
 

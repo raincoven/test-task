@@ -14,7 +14,7 @@ export class RegisterPage {
     readonly NoThanksButton = element(by.xpath("//*[@id='optOut']/.."));
     readonly HeaderAccountIcon = element(by.id("idcta-link"));
 
-    public Open(): promise.Promise<void> {
+    public Open(): promise.Promise<any> {
         return browser.get(this.CorrectURL);
     }
 
