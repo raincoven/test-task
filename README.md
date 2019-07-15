@@ -24,7 +24,7 @@ That's it! It will launch tests and in console output you will see logs which si
 # Project Structure
 - features folder. Contains .feature file with tests and also "pages" folder with .po.ts PageObject files and "step_definitions" folder with .step.ts files used for defining Gherkin steps used in .feature files.
 - package.json file. System file used for dependencies installation and custom scripts definition
-- tsconfig.json file. TypeScript compilier configuration file. 
+- tsconfig.json file. TypeScript compiler configuration file. 
 - protractor.conf.js file. Protractor (Selenium Webdriver) configuration file used for specifying which .ts and .feature files should be used and which browser should used.
 
 
