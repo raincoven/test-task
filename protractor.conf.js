@@ -1,3 +1,5 @@
+const crew = require('serenity-js/lib/stage_crew');
+
 exports.config = {
     chromeOnly: true,
     directConnect: true,
@@ -11,6 +13,15 @@ exports.config = {
         require:    [ 'features/**/*.ts' ], // loads step definitions
         format:     'pretty',               // enable console output
         compiler:   'ts:ts-node/register',   // interpret step definitions as TypeScript
+    },
+
+    serenity: {
+        crew:    [
+            crew.serenityBDDReporter(),
+            crew.photographer()
+        ],
+
+        dialect: 'cucumber',  // or 'mocha'
     },
 
     onPrepare: () => {
